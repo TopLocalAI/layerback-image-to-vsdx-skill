@@ -14,15 +14,6 @@ metadata:
   apiDocsUrl: https://layerback.com/docs/api
   openApiUrl: https://layerback.com/openapi.yaml
   mcpRepository: https://github.com/TopLocalAI/layerback-mcp
-  openclaw:
-    homepage: https://layerback.com/image-to-visio
-  envVars:
-    - name: LAYERBACK_API_KEY
-      required: false
-      description: LayerBack API key used only for direct API conversion.
-    - name: LAYERBACK_API_BASE_URL
-      required: false
-      description: Optional API base override; defaults to https://layerback.com/api/v1.
 ---
 
 # LayerBack Image to VSDX
