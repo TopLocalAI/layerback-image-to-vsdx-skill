@@ -7,11 +7,6 @@ metadata:
   displayName: LayerBack Image to VSDX
   version: 1.0.0
   summary: Rebuild screenshots, flowcharts, architecture diagrams, UML, ER diagrams, organization charts, and whiteboard photos as editable Visio files.
-  tags:
-    - image-to-vsdx
-    - visio
-    - editable-diagram
-    - diagram-conversion
   homepage: https://layerback.com/image-to-visio
   repository: https://github.com/TopLocalAI/layerback-image-to-vsdx-skill
   convertUrl: https://layerback.com/convert
