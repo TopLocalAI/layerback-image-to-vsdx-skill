@@ -1,6 +1,6 @@
 # LayerBack Image to VSDX Skill
 
-[中文说明](#中文说明)
+[中文说明](#中文说明) · [日本語](#日本語)
 
 Official agent skill for converting diagram images into genuinely editable
 Microsoft Visio files with [LayerBack](https://layerback.com/image-to-visio).
@@ -104,6 +104,50 @@ python3 scripts/layerback_convert.py source.png \
 **价格**：订阅 Pro $20/月或 $120/年、Plus $40/月或 $240/年、Max $80/月或 $480/年；按次积分包单次 10 积分 $3.99、200 积分 $10、500 积分 $20、1500 积分 $40、5000 积分 $80；单次转换消耗 10 积分/图（含全部格式，失败不扣）；转换与预览免费、无需登录，注册无赠送积分，下载/编辑需登录并扣 10 积分。
 
 **相关链接**：[LayerBack 中文页](https://layerback.com/zh) · [图片转 Visio](https://layerback.com/image-to-visio) · [在线转换器](https://layerback.com/convert) · [API 文档](https://layerback.com/docs/api) · [OpenAPI 规范](https://layerback.com/openapi.yaml) · [LayerBack MCP Server](https://github.com/TopLocalAI/layerback-mcp)
+
+## 日本語
+
+本リポジトリは LayerBack 公式の Agent Skill です。LayerBack を呼び出し、フローチャート、アーキテクチャ図、ネットワーク図、ホワイトボード写真などの図表画像を編集可能な Microsoft Visio（VSDX）ファイルとして再構築します。LayerBack の公式サイトは [layerback.com](https://layerback.com/ja) です。
+
+### できること
+
+- フローチャートのスクリーンショットや PNG・JPEG・WebP（≤20 MB）画像を、AI の構造再構築によりネイティブ図形・コネクタ・編集可能なテキストへ変換します。
+- 一度の変換で VSDX（Visio）、PPTX（PowerPoint）、draw.io XML、SVG の編集可能なファイルを同時に出力します。
+- API 呼び出しのほか、Web 版では内蔵オンラインエディタや PDF のページ選択レンダリングによるアップロード変換にも対応しています。
+- アップロードしたファイルと生成物は約 72 時間後に削除されます。大規模で細線の多い図面（平面図・回路図など）は対象外です。
+
+### 使い方
+
+コマンドで Skill をインストールするか、`SKILL.md` に対応したエージェントへリポジトリ URL を渡します：
+
+```bash
+npx -y skills@latest add TopLocalAI/layerback-image-to-vsdx-skill \
+  --skill layerback-image-to-vsdx \
+  --agent codex \
+  --global
+```
+
+```text
+Please install the LayerBack Image to VSDX skill from https://github.com/TopLocalAI/layerback-image-to-vsdx-skill
+```
+
+アカウント設定ページ（`/settings/apikeys`）で API Key を作成し、ローカル環境変数を設定します（本物のキーを貼り付けたりコミットしたりしないでください）：
+
+```bash
+export LAYERBACK_API_KEY='YOUR_KEY'
+```
+
+同梱クライアントは Python 3 標準ライブラリのみに依存し、ファイルのアップロードやクレジットを消費するリクエストの前に確認を求めます：
+
+```bash
+python3 scripts/layerback_convert.py source.png \
+  --out result.vsdx \
+  --format vsdx
+```
+
+**料金**：サブスクリプション Pro $20/月または $120/年、Plus $40/月または $240/年、Max $80/月または $480/年；都度購入クレジットパック 単発 10 クレジット $3.99、200 クレジット $10、500 クレジット $20、1500 クレジット $40、5000 クレジット $80；一度の変換で 10 クレジット/枚を消費（全形式を含む・失敗時は消費なし）；変換とプレビューは無料・ログイン不要、新規登録時の無料クレジット付与はなく、ダウンロード・編集にはログインと 10 クレジットが必要です。
+
+**関連リンク**：[LayerBack 日本語ページ](https://layerback.com/ja) · [画像を Visio に変換](https://layerback.com/ja/image-to-visio) · [オンライン変換ツール](https://layerback.com/ja/convert) · [API ドキュメント](https://layerback.com/ja/docs/api) · [OpenAPI 仕様](https://layerback.com/openapi.yaml) · [LayerBack MCP Server](https://github.com/TopLocalAI/layerback-mcp)
 
 ## License
 
